@@ -28,14 +28,14 @@ char lettres[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p
 
 
 public void affichage_Lettres_Ordi(){
-System.out.printf("Le joueur a tiré la lettre %c\n",lettres[lettre1]);
-System.out.printf("L'ordinateur a tiré la lettre %c\n",lettres[lettre2]);
+System.out.printf("Le joueur a tirÃ© la lettre %c\n",lettres[lettre1]);
+System.out.printf("L'ordinateur a tirÃ© la lettre %c\n",lettres[lettre2]);
 
 }
 
 public void affichage_Lettres(){
-System.out.printf("Le joueur numéro 1 a tiré la lettre %c\n",lettres[lettre1]);
-System.out.printf("Le joueur numéro 2 a tiré la lettre %c\n",lettres[lettre2]);
+System.out.printf("Le joueur numÃ©ro 1 a tirÃ© la lettre %c\n",lettres[lettre1]);
+System.out.printf("Le joueur numÃ©ro 2 a tirÃ© la lettre %c\n",lettres[lettre2]);
 
 }
 public void ajout(int joueur_tour, String mot, int nb_mots) {
@@ -44,11 +44,11 @@ public void ajout(int joueur_tour, String mot, int nb_mots) {
    }
 
 public void affichage_mots(int nb1, int nb2) {
-if (nb1 > 0 ) { System.out.println("Voici les mots trouvés par le joueur numéro 1 :\n"); }
-for(int i = 0; i < nb1; i++) { System.out.printf("%s\n",Mots_joueur1[i]); }
+if (nb1 > 0 ) { System.out.println("Voici les mots trouvÃ©s par le joueur numÃ©ro 1 :\n"); }
+for(int i = 0; i < nb1; i++) { System.out.printf("Mot numÃ©ro %d ---> %s\n",i + 1,Mots_joueur1[i]); }
 
-if (nb2 > 0 ) { System.out.println("Voici les mots trouvés par le joueur numéro 2 :\n"); }
-for(int j = 0; j < nb2; j++) { System.out.printf("%s\n",Mots_joueur2[j]); }
+if (nb2 > 0 ) { System.out.println("Voici les mots trouvÃ©s par le joueur numÃ©ro 2 :\n"); }
+for(int j = 0; j < nb2; j++) { System.out.printf("Mot numÃ©ro %d ---> %s\n",j + 1,Mots_joueur2[j]); }
 
 
 }
@@ -79,10 +79,26 @@ if(lettre1 == i || lettre2 == i ) { sac_commun[i] += 1; }
 
    }  }
 
+public void ajouter_1_lettre () {
+lettre1 = hasard.nextInt(26);
+
+ for(int i = 0; i < 26; i++) { 
+if(lettre1 == i) { sac_commun[i] += 1; }  
+
+
+ }
+}
 
 
    public void afficher_pot_commun() {
-     System.out.println("\n             POT COMMUN              \n");
+int comptage = 0;
+for(int j = 0; j < 26; j++) { 
+
+ if(sac_commun[j] > 0) { comptage = comptage + sac_commun[j];   }  
+   } 
+
+
+     System.out.printf("\nPOT COMMUN COMPOSÃ‰ DE %d LETTRES\n",comptage);
      for(int i = 0; i < 26; i++) { 
 
  if(sac_commun[i] > 0) {  System.out.printf("               %d x  %c\n",sac_commun[i],lettres[i]);   }  }
@@ -91,17 +107,19 @@ if(lettre1 == i || lettre2 == i ) { sac_commun[i] += 1; }
 public int verification(String mot) {
 int mot_ok = 0;
 mot_ok =  verificationDictionnaire(mot);
-if(mot_ok != 1) { System.out.println("Désolé mais le mot n'est pas présent dans le dictionnaire\n"); return 2;  }
+if(mot_ok != 1) { System.out.println("DÃ©solÃ© mais le mot n'est pas prÃ©sent dans le dictionnaire\n"); return 2;  }
+
 
 mot_ok = verification_sac_commun(mot);
-if(mot_ok != 1) { System.out.println("Désolé mais il vous manque des lettres pour écrire ce mot\n"); return 2;  }
+if(mot_ok != 1) { System.out.println("DÃ©solÃ© mais il vous manque des lettres pour Ã©crire ce mot\n"); return 2;  }
 
 return 1;
 }
+
+
 public int verification_sac_commun(String mot) {
 int a = mot.length();
 char[] tab = new char[a];
-int impossible = 0;
  
 
 for(int i = 0; i < 26; i++) { sac_commun_temporaire[i] = sac_commun[i]; }
@@ -140,7 +158,33 @@ public int verificationDictionnaire(String mot) {
  return 0;
 }
 
+public int Ordinateur_cherche_mot(int nb) {
+    String mot,line;
+    int check;
+    try{
+ FileReader filereader = new FileReader(new File("Dictionnaire.txt"));
+ BufferedReader br = new BufferedReader(filereader);
+ 
+ 
+ while ((line = br.readLine()) != null) { 
 
+ mot = line;
+check = verification_sac_commun(mot);
+if(check == 1) {
+ System.out.println("L'ordinateur rÃ©flechit ...\n");
+ Thread.sleep(2000);
+ System.out.printf("L'ordinateur a trouvÃ© le mot %s\n",mot);
+   ajout(2,mot,nb + 1);  ajouter_1_lettre();  actualiser_pot_commun();
+
+  return 1; }   
+      }
+ } 
+    catch (Exception e){
+			System.out.println(e.toString());
+		}
+
+ return 0;
+}
 
  
  }
