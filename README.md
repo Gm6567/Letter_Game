@@ -22,4 +22,8 @@ A noter que lors d'une partie contre l'ordinateur , l'ordinateur est toujours le
 
 Chaque fois qu'un joueur trouve un mot une lettre de plus est ajoutée au pot commun, et à chaque nouveau tour 2 lettres de plus sont ajoutés au pot commun.
 
+A chaque nouveau tour le programme rappelle également les mots qui ont été trouvé par chaque joueur.
+
 Lorsqu'un joueur trouve 10 mots il remporte la partie et le menu d'accueil lui propose de rejouer une nouvelle partie ou de quitter.
+
+<img src="images/cap1" width="500"/>
