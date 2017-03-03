@@ -26,4 +26,4 @@ A chaque nouveau tour le programme rappelle également les mots qui ont été tr
 
 Lorsqu'un joueur trouve 10 mots il remporte la partie et le menu d'accueil lui propose de rejouer une nouvelle partie ou de quitter.
 
-<img src="images/cap1" width="500"/>
+<img src="images/cap1.png" width="500"/>
