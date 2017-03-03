@@ -37,15 +37,18 @@ Nous avons créé un projet maven sous Eclipse, le jeu compile sous Eclipse mais
 javac Jeu.java Affichage.java Joueur.java Mot.java
 java Jeu
 ```
+```
+mvn -q compile
+mvn -q exec:java
+```
 <img src="images/cap4.png" width="700"/>
 
 C'est pour cette raison qu'en plus du package créé sous Maven nous mettons également à disposition sur ce github une archive Lettergame.zip contenant tous les fichiers java (et les fichiers tests) ainsi que le fichier Dictionnaire.txt.
 
 On peut donc tester le jeu en ouvrant le terminal depuis le dossier et en tapant les commandes suivantes :
-
 ```
-mvn -q compile
-mvn -q exec:java
+javac Jeu.java Affichage.java Joueur.java Mot.java
+java Jeu
 ```
 # Tests unitaires
 
