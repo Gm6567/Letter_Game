@@ -7,3 +7,4 @@ concernant le déroulement de la partie (mot erroné, fin de la partie, ajout de
 Joueur : cette classe s'occupe des différentes informations concernant les joueurs( quel joueur doit jouer par exemple ?), 
 elle sert en quelque sorte d'intermédiaire à la classe Affichage et à la classe Mot. 
 
+file:///home/guillaume/Documents/Captures%20estimations/jeumaven.png 
