@@ -18,6 +18,7 @@ Lorsque le joueur lance le choix il peut "taper 1" pour affronter un second joue
 
 <img src="images/cap2.png" width="500"/>
 <img src="images/cap3.png" width="500"/>
+
 A chaque début de partie chaque joueur tire une lettre au hasard et commence si la lettre qu'il a tiré arrive avant la seconde lettre dans l'alphabet.
 
 A noter que lors d'une partie contre l'ordinateur , l'ordinateur est toujours le joueur numéro 2.
