@@ -29,5 +29,26 @@ A chaque nouveau tour le programme rappelle également les mots qui ont été tr
 
 Lorsqu'un joueur trouve 10 mots il remporte la partie et le menu d'accueil lui propose de rejouer une nouvelle partie ou de quitter.
 
+# Compilation du projet et Maven
+<img src="images/cap5.png" width="700"/>
+
+Nous avons créé un projet maven sous Eclipse, le jeu compile sous Eclipse mais curieusement il ne s'éxécute pas correctement sous Maven en utilisant la commande maven d'execution directement dans le terminal.
+
+<img src="images/cap4.png" width="700"/>
+
+C'est pour cette raison qu'en plus du package créé sous Maven nous mettons également à disposition sur ce github une archive Lettergame.zip contenant tous les fichiers java (et les fichiers tests) ainsi que le fichier Dictionnaire.txt.
+
+On peut donc tester le jeu en ouvrant le terminal depuis le dossier et en tapant les commandes suivantes :
+
+```
+javac Jeu.java Affichage.java Joueur.java Mot.java
+java Jeu
+```
+# Tests unitaires
+
+Nous avons réalisé les tests unitaires sous Maven, et ils sont également présent dans notre archive LetterGame.zip.
+
+<img src="images/cap6.png" width="700"/>
+
 
 
