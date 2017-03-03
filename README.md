@@ -7,6 +7,12 @@
 
 # Découpage du projet
 
+Notre projet  est découpé en 4 classe , Jeu.java, Affichage.java , Joueur.java , et Mot.java. 
+  - Jeu : se contente de lancer le jeu en faisant appel à la classe "Affichage".
+  - Affichage : Affiche l e menu et le déroulement du jeu, indique à l'utilisateur les choix qui s'offrent à lui ou toute autre information concernant le déroulement de la partie (mot erroné, fin de la partie, ajout des mots dans le pot commun).
+  - Joueur : cette classe s'occupe des différentes informations concernant les joueurs( quel joueur doit jouer par exemple ?), elle sert en quelque sorte d'intermédiaire à la classe Affichage et à la classe Mot. 
+  - Mot : met à jour les lettres présentes dans le pot et les mots composés par chaque joueur, s'occupe également de vérifier qu'un mot est présent dans le dictionnaire et qu'il y a les lettres nécessaires dans le pot commun pour le composer.
+
 # Fonctionnalités
 Lorsque le joueur lance le choix il peut "taper 1" pour affronter un second joueur, "taper 2" pour affronter l'ordinateur ou encore "taper 3" pour tout de suite quitter le jeu.
 
