@@ -16,6 +16,8 @@ Notre projet  est découpé en 4 classe , Jeu.java, Affichage.java , Joueur.java
 # Fonctionnalités
 Lorsque le joueur lance le choix il peut "taper 1" pour affronter un second joueur, "taper 2" pour affronter l'ordinateur ou encore "taper 3" pour tout de suite quitter le jeu.
 
+<img src="images/cap2.png" width="500"/>
+<img src="images/cap3.png" width="500"/>
 A chaque début de partie chaque joueur tire une lettre au hasard et commence si la lettre qu'il a tiré arrive avant la seconde lettre dans l'alphabet.
 
 A noter que lors d'une partie contre l'ordinateur , l'ordinateur est toujours le joueur numéro 2.
@@ -26,4 +28,5 @@ A chaque nouveau tour le programme rappelle également les mots qui ont été tr
 
 Lorsqu'un joueur trouve 10 mots il remporte la partie et le menu d'accueil lui propose de rejouer une nouvelle partie ou de quitter.
 
-<img src="images/cap1.png" width="500"/>
+
+
