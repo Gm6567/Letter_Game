@@ -32,8 +32,11 @@ Lorsqu'un joueur trouve 10 mots il remporte la partie et le menu d'accueil lui p
 # Compilation du projet et Maven
 <img src="images/cap5.png" width="700"/>
 
-Nous avons créé un projet maven sous Eclipse, le jeu compile sous Eclipse mais curieusement il ne s'éxécute pas correctement sous Maven en utilisant la commande maven d'execution directement dans le terminal.
-
+Nous avons créé un projet maven sous Eclipse, le jeu compile sous Eclipse mais curieusement il ne s'éxécute pas correctement sous Maven en utilisant les commande maven suivantes de compilation et d'exécution : 
+```
+javac Jeu.java Affichage.java Joueur.java Mot.java
+java Jeu
+```
 <img src="images/cap4.png" width="700"/>
 
 C'est pour cette raison qu'en plus du package créé sous Maven nous mettons également à disposition sur ce github une archive Lettergame.zip contenant tous les fichiers java (et les fichiers tests) ainsi que le fichier Dictionnaire.txt.
@@ -41,8 +44,8 @@ C'est pour cette raison qu'en plus du package créé sous Maven nous mettons ég
 On peut donc tester le jeu en ouvrant le terminal depuis le dossier et en tapant les commandes suivantes :
 
 ```
-javac Jeu.java Affichage.java Joueur.java Mot.java
-java Jeu
+mvn -q compile
+mvn -q exec:java
 ```
 # Tests unitaires
 
